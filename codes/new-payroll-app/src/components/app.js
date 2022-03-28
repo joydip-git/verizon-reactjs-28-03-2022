@@ -1,12 +1,37 @@
-import { employeelist } from "./employee-list";
-import { welcome } from "./welcome";
-export function app() {
-    const welElement = welcome()
-    const tblElement = employeelist()
+import { EmployeeList } from "./EmployeeList"
+import { Welcome } from "./welcome"
+import React from 'react'
 
-    const mainDivElement = document.createElement('div')
-    mainDivElement.appendChild(welElement)
-    mainDivElement.appendChild(tblElement)
+export function App() {
+    // const welElement = Welcome()
+    // const tblElement = EmployeeList()
 
+    // const mainDivElement = React.createElement('div', null, [welElement, tblElement])
+    const mainDivElement = (
+        <div>
+            <Welcome />
+            <br />
+            <EmployeeList />
+        </div>
+    )
     return mainDivElement
 }
+/**
+ * {
+ *    type:'div',
+ *    props:{
+ *     children:[
+ *     
+ *      {
+ *       type:'h2',
+ *          props:{
+ *          id:'mainHeader',
+ *       style:{},
+ *          children:'welcome to employee payroll'
+ *      }
+ *       }
+
+ *     ]
+ *    }
+ * }
+ */

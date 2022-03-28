@@ -1,17 +1,12 @@
-define(["./components/app"], function (_app) {
+define(["./components/app", "react-dom", "React"], function (_app, _reactDom, _React) {
   "use strict";
 
-  // const hrModuleExports = require('./hr')
-  // const devModuleExports = require('./developer')
-  // import { Hr } from "./hr";
-  // import { Developer } from "./developer";
-  // import { employees } from "./repository/employeerepository";
-  // function printSalarySlips() {
-  // }
-  // document.getElementById('btnLoad').addEventListener('click', printSalarySlips)
-  // console.log('welcome to modular JS code...')
-  //bootstrapper file
-  var appDesign = (0, _app.app)();
-  var rootDiv = document.getElementById('root');
-  rootDiv.appendChild(appDesign);
+  _React = _interopRequireDefault(_React);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+  // const appDesign = App()
+  var rootDiv = document.getElementById('root'); //render(appDesign, rootDiv)
+
+  (0, _reactDom.render)( /*#__PURE__*/_React["default"].createElement(_app.App, null), rootDiv);
 });

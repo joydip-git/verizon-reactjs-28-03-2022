@@ -1,17 +1,40 @@
-define(["exports", "./employee-list", "./welcome"], function (_exports, _employeeList, _welcome) {
+define(["exports", "./EmployeeList", "./welcome", "react"], function (_exports, _EmployeeList, _welcome, _react) {
   "use strict";
 
   Object.defineProperty(_exports, "__esModule", {
     value: true
   });
-  _exports.app = app;
+  _exports.App = App;
+  _react = _interopRequireDefault(_react);
 
-  function app() {
-    var welElement = (0, _welcome.welcome)();
-    var tblElement = (0, _employeeList.employeelist)();
-    var mainDivElement = document.createElement('div');
-    mainDivElement.appendChild(welElement);
-    mainDivElement.appendChild(tblElement);
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+  function App() {
+    // const welElement = Welcome()
+    // const tblElement = EmployeeList()
+    // const mainDivElement = React.createElement('div', null, [welElement, tblElement])
+    var mainDivElement = /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement(_welcome.Welcome, null), /*#__PURE__*/_react["default"].createElement("br", null), /*#__PURE__*/_react["default"].createElement(_EmployeeList.EmployeeList, null));
+
     return mainDivElement;
   }
+  /**
+   * {
+   *    type:'div',
+   *    props:{
+   *     children:[
+   *     
+   *      {
+   *       type:'h2',
+   *          props:{
+   *          id:'mainHeader',
+   *       style:{},
+   *          children:'welcome to employee payroll'
+   *      }
+   *       }
+  
+   *     ]
+   *    }
+   * }
+   */
+
 });

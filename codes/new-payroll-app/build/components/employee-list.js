@@ -22,11 +22,14 @@ define(["exports", "../repository/employeerepository"], function (_exports, _emp
   }
 
   function createBody(tblObj) {
-    for (var i = 0; i < _employeerepository.employees.length; i++) {
+    var _loop = function _loop(i) {
       var single = _employeerepository.employees[i];
       var trObj = document.createElement('tr');
       var tdName = document.createElement('td');
       tdName.innerText = single.empName;
+      tdName.addEventListener('mouseover', function () {
+        alert(single.empBasic);
+      });
       var tdId = document.createElement('td');
       tdId.innerText = single.empId.toString();
       var tdSalary = document.createElement('td');
@@ -35,6 +38,10 @@ define(["exports", "../repository/employeerepository"], function (_exports, _emp
       trObj.appendChild(tdId);
       trObj.appendChild(tdSalary);
       tblObj.appendChild(trObj);
+    };
+
+    for (var i = 0; i < _employeerepository.employees.length; i++) {
+      _loop(i);
     }
   }
 

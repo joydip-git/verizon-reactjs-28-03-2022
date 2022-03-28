@@ -28,6 +28,9 @@ function createBody(tblObj) {
 
         const tdName = document.createElement('td')
         tdName.innerText = single.empName
+        tdName.addEventListener('mouseover', function () {
+            alert(single.empBasic)
+        })
 
         const tdId = document.createElement('td')
         tdId.innerText = single.empId.toString()
