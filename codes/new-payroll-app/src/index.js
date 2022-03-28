@@ -1,20 +1,19 @@
 // const hrModuleExports = require('./hr')
 // const devModuleExports = require('./developer')
 
-import { Hr } from "./hr";
-import { Developer } from "./developer";
+// import { Hr } from "./hr";
+// import { Developer } from "./developer";
+// import { employees } from "./repository/employeerepository";
 
-function printSalarySlips() {
-    const anilHr = new Hr(1, 'anil', 1000, 2000, 3000, 4000)
-    const sunilDeveloper = new Developer(1, 'sunil', 1500, 2500, 3500, 4500)
+// function printSalarySlips() {
 
-    const employees = [anilHr, sunilDeveloper]
+// }
+// document.getElementById('btnLoad').addEventListener('click', printSalarySlips)
 
-    for (let i = 0; i < employees.length; i++) {
-        const single = employees[i]
-        alert(`${single.empName} has salary of ${single.calculateSalary()}`)
-    }
-}
-document.getElementById('btnLoad').addEventListener('click', printSalarySlips)
+// console.log('welcome to modular JS code...')
 
-console.log('welcome to modular JS code...')
+//bootstrapper file
+import { app } from "./components/app";
+const appDesign = app()
+const rootDiv = document.getElementById('root')
+rootDiv.appendChild(appDesign)
