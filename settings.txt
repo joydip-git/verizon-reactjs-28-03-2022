@@ -1,0 +1,12 @@
+nodejs and npm
+
+user variables:
+path variable: 
+C:\Users\ghosh\AppData\Roaming\npm
+
+system variables:
+path variable: C:\Program Files\nodejs
+
+>node -v
+>npm -v
+
