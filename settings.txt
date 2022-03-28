@@ -2,7 +2,7 @@ nodejs and npm
 
 user variables:
 path variable: 
-C:\Users\ghosh\AppData\Roaming\npm
+C:\Users\<user-name>\AppData\Roaming\npm
 
 system variables:
 path variable: C:\Program Files\nodejs
