@@ -1,9 +1,52 @@
-asp.net, spring mvc
-
-
 React JS: client-side library to create SPA (single page application)
 JavaScript UI Library, supports VDOM
 
-React JS, Angular, Vue
+client-side web app technologies: React JS, Angular, Vue etc.
 
-1. 
+1. shift of focus from server side web application technlogies (asp.net, spring mvc etc.) to client-side web application technologies
+
+2. understanding modules in JS
+	a. in node js applications
+	b. in browser applications
+
+3. module formats:
+	a. Common JS format (default module def format in Node JS applications written using JS)
+	b. Asynchronous Module Definition format (AMD)
+	c. Universal Module Definition format (UMD)
+	d. ES6 module format: import/export
+
+4. module loader:
+	s/w to understand the module format of JS code, resolve the dependencies between the files (modules) and load the modules in the browser
+	a. require js
+	b. system js
+
+browser s/w expects you to pass the module loader
+the require js module loader, expects the modules to be written in AMD format, not in any other format
+
+another problem: the JS code written using all the new features and syntaxes, might not be understood by all the browsers (old)
+
+soln: 
+a. you need your JS modular code written using different module format, to be converted to AMD module format
+b.  you need your JS code written using latest syntaxes and features,to be converted to older JS version (vanila JS)
+
+you need transpiler s/w: converts new JS code in older version JS code
+babel: JS compiler and transpiler
+
+create package.json file
+>npm init
+
+install babel core compiler:
+npm install @babel/core -D
+
+install the preset for ES2015+ syntax transformers
+npm i @babel/preset-env -D
+
+instal CLI tool for Babel:
+npm i @babel/cli -D
+
+install ES6 to AMD module format transformer:
+npm i @babel/plugin-transform-modules-amd -D
+
+
+
+
