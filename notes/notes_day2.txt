@@ -17,3 +17,37 @@ DELETE http://127.0.0.1:8081/products/{id}
 
 
 npm i axios
+
+HOC: Higher Order Component
+
+
+Lifting the state up
+
+
+mixin: JS
+
+
+1. class component?
+	a. state maintenance
+			it has to be a JS object always
+	b. lifecycle:
+			mount
+			update
+			shouldcomponentupdate
+
+2. HOC: reusability
+
+this.state={x:0}
+
+componentDidMount(){
+   this.setState()
+   websocket
+   file handling
+}
+
+componentWillUnmount(){
+}
+
+comp => HOC => enhanced comp
+
+
