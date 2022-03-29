@@ -8,3 +8,12 @@
 or
 >d:
 
+
+GET http://127.0.0.1:8081/products 		returns array of products
+GET http://127.0.0.1:8081/products/{id} 
+POST http://127.0.0.1:8081/products
+PUT http://127.0.0.1:8081/products
+DELETE http://127.0.0.1:8081/products/{id}
+
+
+npm i axios
