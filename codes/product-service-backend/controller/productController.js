@@ -4,7 +4,7 @@ const statusMessage = require('../statusMessage');
 function fetchProducts(req, res) {
     let data = productBo.getProducts();
 
-    if (data.length > 0)        
+    if (data.length > 0)
         res.end(JSON.stringify(data));
     else
         res.end(JSON.stringify(new statusMessage.Status("no product record found")));
