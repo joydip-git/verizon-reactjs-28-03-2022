@@ -1,0 +1,9 @@
+1. react app using tool create-react-app
+2. components 
+3. props and state
+4. class and functional component
+
+>npm i create-react-app -g
+>create-react-app <app-name>
+or
+>npx create-react-app <app-name> 
