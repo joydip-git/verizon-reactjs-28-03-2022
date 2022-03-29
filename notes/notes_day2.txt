@@ -6,4 +6,5 @@
 >npm i create-react-app -g
 >create-react-app <app-name>
 or
->npx create-react-app <app-name> 
+>d:
+

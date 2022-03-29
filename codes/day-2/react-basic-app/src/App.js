@@ -7,15 +7,15 @@ class App extends Component {
     super()
     this.state = {
       greeting: 'welcome to react js',
-      value: 10,
+      value: 0,
       name:'joydip'
     }
   }
 
-  updateValue = () => {
+  updateGreetingHandler = () => {
     // this.state.greeting = 'welcome to React learning'
     // console.log(this.state)
-    // this.render()   
+    // this.render()
     // const copyState = {
     //   ...this.state
     // }
@@ -27,17 +27,32 @@ class App extends Component {
     //   ...newState
     // }
     // console.log(updatedState)
+    //mutate the state immutably
     this.setState({
       greeting: 'welcome to React learning'
     })
   }
+  
+  updateValueHandler = () => {
+    this.setState(
+      (currentStateCopy) => {
+        return {
+          value:currentStateCopy.value+1
+        }
+      }
+    )
+  }
+
+  //lifecycle event
   render() {
     console.log('rendered')
     return (
       <div className="App">
         App Component
+        <br/>
+        <button onClick={this.updateValueHandler}>Increase Value</button>
         <br />
-        <Welcome message={this.state.greeting} val={this.state.value} name={this.state.name} valueHandler={this.updateValue} />
+        <Welcome message={this.state.greeting} val={this.state.value} name={this.state.name} valueHandler={this.updateGreetingHandler} />
       </div >
     )
   }
@@ -73,7 +88,6 @@ function App() {
 <Welcome message={greeting} val={10} name='joydip' valueHandler={updateValue} />
     </div >
   )
-
 }
 * /
 export default App;
