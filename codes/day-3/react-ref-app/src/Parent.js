@@ -8,6 +8,7 @@ export default class Parent extends Component {
         this.parentInputElementRef = null;
         this.parentInputElementRefObj = createRef()
         this.nestedComponentObjRef = createRef()
+        this.nestedFCRef = createRef()
     }
     state = {
         val: ''
@@ -55,13 +56,19 @@ export default class Parent extends Component {
                 <Nested showHandler={this.showValue} ref={this.nestedComponentObjRef} />
                 <br />
                 <br />
-                <NestedFC />
+                <NestedFC x={10} ref={this.nestedFCRef} />
             </div>
         )
     }
     componentDidMount() {
         //this.focusInputOfParent()
         //this.focusOnNestedInput()
-        this.nestedComponentObjRef.current.focusOnNestedInput()
+        //this.nestedComponentObjRef.current.focusOnNestedInput()
+        this.nestedFCRef.current.focus()
     }
 }
+/**
+ * {
+ * x:10
+ * }
+ */
