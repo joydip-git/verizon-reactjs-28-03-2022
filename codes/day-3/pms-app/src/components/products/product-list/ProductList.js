@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component, createRef, Fragment } from 'react'
 import ErrorBoundary from '../../../common/ErrorBoundary'
 import { fetchProducts } from '../../../services/productservice'
 import FilterProduct from '../filter-product/FilterProduct'
@@ -14,6 +14,7 @@ class ProductList extends Component {
             errorMessage: '',
             selectedProductId: 0
         }
+        this.filterProductInputRef = createRef()
         console.log('created')
     }
     selectProductHandler = (pid) => {
@@ -43,7 +44,7 @@ class ProductList extends Component {
             design = (
                 <>
                     <div className='container'>
-                        <FilterProduct />
+                        <FilterProduct ref={this.filterProductInputRef} />
                         <br />
                         <ProductTable products={products} selectHandler={this.selectProductHandler} />
                     </div>
@@ -64,6 +65,7 @@ class ProductList extends Component {
     }
     componentDidMount() {
         console.log('mounted')
+
         fetchProducts()
             .then(
                 (resp) => {
@@ -71,7 +73,10 @@ class ProductList extends Component {
                         products: resp.data,
                         loading: false,
                         errorMessage: ''
+                    }, () => {
+                        this.focusInput()
                     })
+
                 },
                 (errResp) => {
                     this.setState({
@@ -84,6 +89,11 @@ class ProductList extends Component {
     }
     componentWillUnmount() {
         console.log('unmounted')
+    }
+    focusInput = () => {
+        if (this.filterProductInputRef.current !== null) {
+            this.filterProductInputRef.current.focus()
+        }
     }
 }
 

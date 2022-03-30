@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 
-const FilterProduct = () => {
+const FilterProduct = (props, refObj) => {
     return (
         <div>
-            Filter:&nbsp;<input type='text' />
+            Filter:&nbsp;<input type='text' ref={refObj} />
         </div>
     )
 }
 
-export default FilterProduct
+export default forwardRef(FilterProduct)
