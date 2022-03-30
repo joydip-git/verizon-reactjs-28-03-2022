@@ -1,0 +1,85 @@
+1. react app
+2. components: functional and class component
+3. state and props
+4. map function and create list of JSX elements
+5. importance Key property of JSX elements
+6. lifecyle events (componentDidMount, componentWillUnmount, render)
+7. Pure component
+8. HOC
+
+9.  lifecycle events
+10. error handling (with HOC)
+11. ref property of JSX elements
+12. context object
+13. hooks
+14. redux
+15. routing
+16. forms
+17. performance
+18. microsites (micro-frontends) in react
+19. testing
+20. portals
+
+
+lifecycle events:
+a. mounting:
+	1. constructor
+	2. getDerivedStateFromProps
+	3. render=> producing the design (react element which will be part of the VDOM of entire application)
+	4. componentDidMount=> VDOM being translated into ADOM and pushed into existing DOM tree
+
+b. updation: state has been updated or component has received updated property data from parent component
+	1. getDerivedStateFromProps
+	2. shouldComponentUpdate
+	3. render
+	4. getSnapshotBeforeUpdate
+	5. componentDidUpdate
+
+c. destruction
+	1. componentWillUnmount
+
+d. error
+	1. getDerivedStateFromError
+	2. componentDidCatch
+
+
+class A extends Component{
+    constructor(){ super()}
+}
+
+const aObj = new A()
+aObj.render()
+
+class PureComponent extends Component{
+shouldComponentUpdate(newProps, newState) {
+        
+    }
+}
+
+shallow
+deep
+
+var x = 0
+var y = 0
+if(x==y){}
+
+var obj1={
+id:1,
+name:'joydip'
+}
+
+var obj2 = {
+id:1,
+name:'joydip'
+}
+
+if(obj1 === obj2){}
+
+if(obj1.id===obj2.id && obj1.name===obj2.name)
+
+<A person={obj1}/>
+person={obj2}
+
+
+
+
