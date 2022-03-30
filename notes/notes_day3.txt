@@ -89,6 +89,26 @@ JSX => RE => HTML
 a. callback ref: assign a callback method to the ref property of the react element
 b. create ref
 
+1. state, lifecycle events: class component
+2. HOC: complex and confusing
+
+class A function A=> hoc() => class [C]
+
+c
+
+
+simple APIs
+
+state, lifecycle, hocs
+
+state={name:'NA', salary:0}
+newState ={name:'anil'}
+const copy = {...state, ...newState}
+//merging the state
+setState()
+
+
+
 
 
 

@@ -16,8 +16,10 @@ class ProductList extends Component {
         }
         this.filterProductInputRef = createRef()
         console.log('created')
+        //this.selectProductHandler = this.selectProductHandler.bind(this)
     }
     selectProductHandler = (pid) => {
+        console.log(this)
         this.setState({ selectedProductId: pid })
     }
     sortByPriceHandler = () => {
@@ -65,7 +67,6 @@ class ProductList extends Component {
     }
     componentDidMount() {
         console.log('mounted')
-
         fetchProducts()
             .then(
                 (resp) => {
