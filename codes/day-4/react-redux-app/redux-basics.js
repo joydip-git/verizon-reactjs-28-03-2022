@@ -69,8 +69,8 @@ const store = createStore(
 
 
 //will be written in a component
-store.dispatch(increaseActionCreator(4))
-store.dispatch(decreaseActionCreator(2))
+// store.dispatch(increaseActionCreator(4))
+// store.dispatch(decreaseActionCreator(2))
 
 
 //dispatch
