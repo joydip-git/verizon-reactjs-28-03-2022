@@ -3,3 +3,47 @@
 a. state can be of any type
 b. you can have many states in function components
 c. state gets replaced, not merged
+
+functional component with similar facility like lifecycle events
+so that I can create Name as FC and stop unnecessary rendering
+also, stop Val to be rendered unnecessarily
+
+2. Effect hook:
+---------------------------------------------
+effect: fetching data, making network requests, reading file data 
+
+
+componentDidUpdate, componentDidMount(), componentDidCatch()
+
+useEffect()
+
+class A{
+   fetchData(){}
+   CDM(){ this.fetchData()}
+   CDU(){this.fetchData()}
+}
+
+Parent ---> nameData
+
+function Name({nameData,nameHandler}){
+   function fetchData(){}
+   function CDM(){ 
+		this.fetchData()
+	}
+   function CDU(){ 
+		this.fetchData()
+	}	
+
+   //CDM should be invoked only one time, the very first time
+   useEffect(CDM,[])
+   
+   // CDU should be executed ONLY when value received through nameData is different
+   useEffect(CDU,[nameData])
+
+   return design
+}
+
+useEffect(callback,[name of controlling factor])
+clean up resources
+
+

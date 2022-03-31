@@ -1,10 +1,12 @@
 import './App.css';
-import Sample from './Sample';
+import Parent from './Parent';
+//import Sample from './Sample';
 
 function App() {
   return (
     <div className="App">
-      <Sample />
+      {/* <Sample /> */}
+      <Parent />
     </div>
   );
 }
