@@ -47,3 +47,23 @@ useEffect(callback,[name of controlling factor])
 clean up resources
 
 
+useEffect(
+        () => {
+            console.log('this is executed every time')
+        }
+    )
+
+the callback is registered with react runtime, but executed after rendering the component
+
+function useEffect(callback,args=null){
+	
+}
+
+A()
+function A(){}
+
+B()
+const B = function(){}
+
+
+

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, useEffect } from 'react'
 import PropTypes from 'prop-types'
 
 const Val = ({ valData, valHandler }) => {
