@@ -42,7 +42,7 @@ const connector = connect(mapStateToProps, mapDispatchToProps)
 export default connector(App);
 */
 
-function App(props) {
+function App() {
 
   const counterValue = useSelector((stateMap) => stateMap.numberState.counter)
 
