@@ -1,0 +1,5 @@
+1. state hook: useState
+-------------------------------------
+a. state can be of any type
+b. you can have many states in function components
+c. state gets replaced, not merged
