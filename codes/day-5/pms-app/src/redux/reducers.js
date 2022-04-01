@@ -9,8 +9,7 @@ const initialProductState = {
 const initialAllProductsState = {
     products: [],
     loading: true,
-    errorMessage: '',
-    selectedProductId: 0
+    errorMessage: ''
 }
 
 export const productStateReducer = (state = initialProductState, action) => {
@@ -59,8 +58,7 @@ export const allProductStateReducer = (state = initialAllProductsState, action) 
                 ...state,
                 loading: true,
                 errorMessage: '',
-                products: [],
-                selectedProductId: 0
+                products: []
             }
             break;
         case actionTypes.FETCH_SUCCESS:
