@@ -1,30 +1,18 @@
 import React, { useEffect } from 'react'
-import { fetchProductById } from '../../../services/productservice'
 import PropTypes from "prop-types";
 import { useSelector, useDispatch } from 'react-redux'
-import { fetchInitiateActionCreator, fetchSuccessActionCreator, fetchFailedActionCreator } from '../../../redux/actionCreators'
+import { fetchProductByIdCallbackCreator } from '../../../redux/callbackCreators'
 
 const ViewProduct = ({ productId }) => {
     const { loading, errorMessage: errorMsg, product: selectedProduct } = useSelector(stateMap => stateMap.productState)
 
     const dispatchFnRef = useDispatch()
 
-    const getData = () => {
-        dispatchFnRef(fetchInitiateActionCreator())
-        fetchProductById(productId)
-            .then(
-                (resp) => {
-                    const p = resp.data
-                    dispatchFnRef(fetchSuccessActionCreator(p))
-                },
-                (err) => {
-                    dispatchFnRef(fetchFailedActionCreator(err.message))
-                }
-            )
-    }
     useEffect(
         () => {
-            getData()
+            //getData()
+            const fetchProductByIdCallback = fetchProductByIdCallbackCreator(productId)
+            dispatchFnRef(fetchProductByIdCallback)
         }, [productId]
     )
 
@@ -47,3 +35,20 @@ ViewProduct.propTypes = {
     productId: PropTypes.number.isRequired
 }
 export default ViewProduct
+
+/**
+ * 
+ * const getData = () => {
+        dispatchFnRef(fetchInitiateActionCreator())
+        fetchProductById(productId)
+            .then(
+                (resp) => {
+                    const p = resp.data
+                    dispatchFnRef(fetchSuccessActionCreator(p))
+                },
+                (err) => {
+                    dispatchFnRef(fetchFailedActionCreator(err.message))
+                }
+            )
+    }
+ */

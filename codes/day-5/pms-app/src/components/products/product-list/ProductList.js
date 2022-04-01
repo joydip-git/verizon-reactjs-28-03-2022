@@ -1,11 +1,10 @@
 import React, { useState, useEffect, createRef } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import ErrorBoundary from '../../../common/ErrorBoundary'
-import { fetchProducts } from '../../../services/productservice'
 import FilterProduct from '../filter-product/FilterProduct'
 import ProductTable from '../product-table/ProductTable'
 import ViewProduct from '../view-product/ViewProduct'
-import { fetchInitiateActionCreator, fetchFailedActionCreator, fetchSuccessActionCreator } from '../../../redux/actionCreators'
+import { fetchProductsCallbackCreator } from '../../../redux/callbackCreators'
 
 function ProductList() {
 
@@ -22,23 +21,12 @@ function ProductList() {
             this.filterProductInputRef.current.focus()
         }
     }
-    const fetchData = () => {
-        dispatchFnRef(fetchInitiateActionCreator())
-        fetchProducts()
-            .then(
-                (resp) => {
-                    dispatchFnRef(fetchSuccessActionCreator(resp.data))
-                    focusInput()
-                },
-                (errResp) => {
-                    dispatchFnRef(fetchFailedActionCreator(errResp.message))
-                }
-            )
-    }
 
     useEffect(
         () => {
-            fetchData()
+            //fetchData()
+            const fetchProductsCallback = fetchProductsCallbackCreator()
+            dispatchFnRef(fetchProductsCallback)
         }, []
     )
     console.log('rendered')
@@ -86,3 +74,18 @@ export default ProductList
            products: updated
        })
    }*/
+/*
+const fetchData = () => {
+    dispatchFnRef(fetchInitiateActionCreator())
+    fetchProducts()
+        .then(
+            (resp) => {
+                dispatchFnRef(fetchSuccessActionCreator(resp.data))
+                focusInput()
+            },
+            (errResp) => {
+                dispatchFnRef(fetchFailedActionCreator(errResp.message))
+            }
+        )
+}
+*/
