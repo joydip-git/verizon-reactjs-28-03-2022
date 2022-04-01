@@ -1,26 +1,26 @@
 import React, { useState, useEffect, createRef } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import ErrorBoundary from '../../../common/ErrorBoundary'
+//import ErrorBoundary from '../../../common/ErrorBoundary'
 import FilterProduct from '../filter-product/FilterProduct'
 import ProductTable from '../product-table/ProductTable'
-import ViewProduct from '../view-product/ViewProduct'
+//import ViewProduct from '../view-product/ViewProduct'
 import { fetchProductsCallbackCreator } from '../../../redux/callbackCreators'
 
 function ProductList() {
 
     const { products, loading, errorMessage } = useSelector(stateMap => stateMap.allProductsState)
     const dispatchFnRef = useDispatch()
-    const [selectedProductId, setSelectedProductId] = useState(0)
+    //const [selectedProductId, setSelectedProductId] = useState(0)
     const filterProductInputRef = createRef()
 
-    const selectProductHandler = (pid) => {
-        setSelectedProductId(pid)
-    }
-    const focusInput = () => {
-        if (this.filterProductInputRef.current !== null) {
-            this.filterProductInputRef.current.focus()
-        }
-    }
+    // const selectProductHandler = (pid) => {
+    //     setSelectedProductId(pid)
+    // }
+    // const focusInput = () => {
+    //     if (this.filterProductInputRef.current !== null) {
+    //         this.filterProductInputRef.current.focus()
+    //     }
+    // }
 
     useEffect(
         () => {
@@ -40,21 +40,12 @@ function ProductList() {
     } else {
         design = (
             <>
-                <div className='container'>
+                <div>
                     <FilterProduct ref={filterProductInputRef} />
                     <br />
-                    <ProductTable products={products} selectHandler={selectProductHandler} />
+                    {/* <ProductTable products={products} selectHandler={selectProductHandler} /> */}
+                    <ProductTable products={products} />
                 </div>
-                <br />
-                <br />
-                {
-                    selectedProductId > 0 && (
-                        <ErrorBoundary
-                            errorLogger={(errObj) => console.log(errObj)}>
-                            <ViewProduct productId={selectedProductId} />
-                        </ErrorBoundary>
-                    )
-                }
             </>
         )
     }
@@ -89,3 +80,12 @@ const fetchData = () => {
         )
 }
 */
+
+/* {
+                    selectedProductId > 0 && (
+                        <ErrorBoundary
+                            errorLogger={(errObj) => console.log(errObj)}>
+                            <ViewProduct productId={selectedProductId} />
+                        </ErrorBoundary>
+                    )
+                } */

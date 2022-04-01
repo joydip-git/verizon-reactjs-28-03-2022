@@ -20,7 +20,7 @@ const ProductTable = ({ products, selectHandler }) => {
                     {
                         products.map(
                             (p) => {
-                                return <ProductRow productData={p} key={p.productId} selectHandler={selectHandler} />
+                                return <ProductRow productData={p} key={p.productId} />
                             }
                         )
                     }
@@ -31,6 +31,8 @@ const ProductTable = ({ products, selectHandler }) => {
 }
 ProductTable.propTypes = {
     products: PropTypes.array.isRequired,
-    selectHandler: PropTypes.func.isRequired
+    //selectHandler: PropTypes.func.isRequired
 }
 export default ProductTable
+
+/* return <ProductRow productData={p} key={p.productId} selectHandler={selectHandler} /> */ 

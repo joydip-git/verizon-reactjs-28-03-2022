@@ -31,9 +31,9 @@ const ViewProduct = ({ productId }) => {
     return design
 }
 
-ViewProduct.propTypes = {
-    productId: PropTypes.number.isRequired
-}
+// ViewProduct.propTypes = {
+//     productId: PropTypes.number.isRequired
+// }
 export default ViewProduct
 
 /**
