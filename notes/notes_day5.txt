@@ -2,3 +2,18 @@ protecting the routes
 
 /products
 /products/:id
+
+<Routes>
+	<PR>
+		<Route path='/products' element={<Productist/>} />
+	</PR>
+</Routes>
+
+context
+
+1. state in top level component (lifting the state up)
+2. redux store
+3. Context Object
+
+component => context [provider]
+component <= context [consumer]
