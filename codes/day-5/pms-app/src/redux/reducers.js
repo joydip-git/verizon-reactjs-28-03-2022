@@ -53,7 +53,7 @@ export const productStateReducer = (state = initialProductState, action) => {
 export const allProductStateReducer = (state = initialAllProductsState, action) => {
     let newState = null
     switch (action.type) {
-        case actionTypes.INITIATE_FETCH:
+        case actionTypes.INITIATE_FETCH_ALL:
             newState = {
                 ...state,
                 loading: true,
@@ -61,7 +61,8 @@ export const allProductStateReducer = (state = initialAllProductsState, action) 
                 products: []
             }
             break;
-        case actionTypes.FETCH_SUCCESS:
+        case actionTypes.FETCH_SUCCESS_ALL:
+            console.log('called')
             newState = {
                 ...state,
                 loading: false,
@@ -70,7 +71,7 @@ export const allProductStateReducer = (state = initialAllProductsState, action) 
             }
             break;
 
-        case actionTypes.FETCH_FAILED:
+        case actionTypes.FETCH_FAILED_ALL:
             newState = {
                 ...state,
                 loading: false,

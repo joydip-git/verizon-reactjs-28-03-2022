@@ -2,6 +2,7 @@ import { createLogger } from "redux-logger";
 import { createStore, applyMiddleware, combineReducers } from "redux";
 import { productStateReducer, allProductStateReducer } from "./reducers";
 import thunkMiddleware from 'redux-thunk'
+import { composeWithDevTools } from 'redux-devtools-extension'
 
 const loggerMiddleware = createLogger()
 const rootReducer = combineReducers({
@@ -9,6 +10,6 @@ const rootReducer = combineReducers({
     allProductsState: allProductStateReducer
 })
 const store = createStore(
-    rootReducer, applyMiddleware(loggerMiddleware, thunkMiddleware))
+    rootReducer, composeWithDevTools(applyMiddleware(loggerMiddleware, thunkMiddleware)))
 
 export default store

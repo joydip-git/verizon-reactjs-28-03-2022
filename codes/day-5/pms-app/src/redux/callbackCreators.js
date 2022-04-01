@@ -19,14 +19,14 @@ export const fetchProductByIdCallbackCreator = (productId) => {
 
 export const fetchProductsCallbackCreator = () => {
     return (disptachFnFromStore) => {
-        disptachFnFromStore(actionCreators.fetchInitiateActionCreator())
+        disptachFnFromStore(actionCreators.fetchAllInitiateActionCreator())
         productService.fetchProducts()
             .then(
                 (resp) => {
-                    disptachFnFromStore(actionCreators.fetchSuccessActionCreator(resp.data))
+                    disptachFnFromStore(actionCreators.fetchAllSuccessActionCreator(resp.data))
                 },
                 (errResp) => {
-                    disptachFnFromStore(actionCreators.fetchFailedActionCreator(errResp.message))
+                    disptachFnFromStore(actionCreators.fetchAllFailedActionCreator(errResp.message))
                 }
             )
     }

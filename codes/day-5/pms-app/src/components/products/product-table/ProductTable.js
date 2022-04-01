@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import ProductRow from '../product-row/ProductRow'
 
-const ProductTable = ({ products, selectHandler }) => {
+const ProductTable = ({ products }) => {
     return (
         <div className='tbl tbl-responsive'>
             <br />

@@ -1,9 +1,14 @@
 import React, { useEffect } from 'react'
-import PropTypes from "prop-types";
+//import PropTypes from "prop-types";
 import { useSelector, useDispatch } from 'react-redux'
+import { useParams } from 'react-router-dom'
 import { fetchProductByIdCallbackCreator } from '../../../redux/callbackCreators'
 
-const ViewProduct = ({ productId }) => {
+// const ViewProduct = ({ productId }) => {
+const ViewProduct = () => {
+    const { productId } = useParams()//{ productId:2, productCode:5}
+    // const [queryParams, setQueryParams] = useSearchParams()
+    // queryParams.get('productId')
     const { loading, errorMessage: errorMsg, product: selectedProduct } = useSelector(stateMap => stateMap.productState)
 
     const dispatchFnRef = useDispatch()

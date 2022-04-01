@@ -1,4 +1,4 @@
-import React, { useState, useEffect, createRef } from 'react'
+import React, { useEffect, createRef } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 //import ErrorBoundary from '../../../common/ErrorBoundary'
 import FilterProduct from '../filter-product/FilterProduct'

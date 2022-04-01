@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
 const ProductRow = (props) => {
     //const { productData, selectHandler } = props
@@ -7,7 +8,11 @@ const ProductRow = (props) => {
     return (
         <tr>
             <td>
-                <img src={productData.imageUrl} alt='NA' style={{ margin: '2px', width: '50px' }} />
+                <Link to={`/products/${productData.productId}`}>
+                    <div className='img img-responsive'>
+                        <img src={productData.imageUrl} alt='NA' style={{ margin: '2px', width: '50px' }} />
+                    </div>
+                </Link>
             </td>
             <td>
                 {productData.productName}
