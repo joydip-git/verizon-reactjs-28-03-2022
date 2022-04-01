@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 import { authenticate, saveToken } from '../../../services/authservice'
 
 const Login = () => {
+    const [queryParams, setQueryParams] = useSearchParams()
     const navigator = useNavigate()
     const [userState, setUserState] = useState({ userName: '', password: '' })
     const updateUserHandler = (propName, propValue) => {
@@ -41,7 +42,12 @@ const Login = () => {
                         .then(
                             (resp) => {
                                 saveToken(resp.data.token)
-                                navigator('/home')
+                                if (queryParams.get('returnUrl')) {
+                                    navigator(`/${queryParams.get('returnUrl')
+                                        }`)
+                                }
+                                else
+                                    navigator('/home')
                             },
                             (err) => {
                                 console.log(err.message)

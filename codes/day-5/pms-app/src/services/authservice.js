@@ -12,7 +12,7 @@ export const getToken = () => {
 }
 
 export const isLoggedIn = () => {
-    return sessionStorage.getItem('token') !== undefined ? true : false;
+    return sessionStorage.getItem('token') !== null ? true : false;
 }
 
 export const removeToken = () => {

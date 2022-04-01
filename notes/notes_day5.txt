@@ -1,0 +1,4 @@
+protecting the routes
+
+/products
+/products/:id
