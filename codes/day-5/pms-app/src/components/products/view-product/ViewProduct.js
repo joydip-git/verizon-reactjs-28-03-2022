@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react'
 //import PropTypes from "prop-types";
 import { useSelector, useDispatch } from 'react-redux'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate, Link } from 'react-router-dom'
 import { fetchProductByIdCallbackCreator } from '../../../redux/callbackCreators'
 
 // const ViewProduct = ({ productId }) => {
 const ViewProduct = () => {
     const { productId } = useParams()//{ productId:2, productCode:5}
+    const navigator = useNavigate()
     // const [queryParams, setQueryParams] = useSearchParams()
     // queryParams.get('productId')
     const { loading, errorMessage: errorMsg, product: selectedProduct } = useSelector(stateMap => stateMap.productState)
@@ -31,7 +32,26 @@ const ViewProduct = () => {
     } else if (selectedProduct === null) {
         design = <span>No record found</span>
     } else {
-        design = <span>{selectedProduct.productName}</span>
+        design = (
+            <>
+                <div>
+                    <div style={{ float: 'left' }}>
+                        <span>{selectedProduct.productName}</span>
+                    </div>
+                    <div style={{ float: 'right' }}>
+                        <Link to={`/products/update/${selectedProduct.productId}`}>
+                            <button className='btn btn-primary'>Edit</button>
+                        </Link>
+                    </div>
+                </div>
+                <br />
+                <button className='btn btn-primary' onClick={
+                    () => {
+                        navigator('/products')
+                    }
+                }>Go Back</button>
+            </>
+        )
     }
     return design
 }
